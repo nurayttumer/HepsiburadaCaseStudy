@@ -77,7 +77,7 @@ public class PageBase {
         protected void finished(Description description) {
             if (driver != null)
                 driver.quit();
-            System.out.println("Test bitti");
+            System.out.println("Test is done");
         }
     };
 }
