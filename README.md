@@ -24,7 +24,7 @@ Notlar:   </br>
 
 ## Proje Videosu
 
-![](https://github.com/nurayttumer/HepsiburadaCaseStudy/seleniumekran.gif)
+![](https://github.com/nurayttumer/HepsiburadaCaseStudy/blob/master/seleniumekran.gif)
 
 
 
