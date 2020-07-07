@@ -22,7 +22,6 @@ Notlar:   </br>
 ** Test yazılırken okunabilirlik, isimlendirmeler, kod tekrarı gibi standartlara dikkat edilmelidir.   </br>
 ** Testler herhangi bir platformda yazılabilir(Java-Selenium,Ruby-Capybara,Python-Robot Framework gibi  </br>
 
-## Proje Videosu  </br>  </br>
+## Proje Videosu  </br> 
 
-Inline-style: 
 ![](https://github.com/nurayttumer/HepsiburadaCaseStudy/blob/master/seleniumekran.gif)
