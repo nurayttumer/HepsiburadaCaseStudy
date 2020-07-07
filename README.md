@@ -8,7 +8,7 @@ Bu projede Hepsiburada tarafından verilen task oluşturulmuş olup senaryoları
 
 * Annotasyonlar ve assertionlar için JUnit kütüphanesi kullanılmıştır.
 
-* Proje Java dilinde Selenium frameworku ile geliştirilmiştir . 
+* Proje Java dilinde Selenium frameworku ile geliştirilmiştir . Mimaride POM kullanılmıştır. 
 
 ## Hepsiburada Task İsterleri  </br>
 ** Kullanıcı hepsiburada.com sitesini ziyaret eder.  </br>
