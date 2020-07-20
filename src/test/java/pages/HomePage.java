@@ -25,7 +25,6 @@ public class HomePage extends TestBase {
     @FindBy(css = "div.cookie-info > img")
     public WebElement closeCookieBaloon;
 
-
     @FindBy(css = "div#SearchBoxOld input")
     public WebElement searchBox;
 

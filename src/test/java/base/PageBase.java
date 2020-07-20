@@ -30,19 +30,18 @@ public class PageBase {
     public void initialize() throws Exception {
         browser = System.getProperty("browser");
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--ignore-certifcate-errors");
-        chromeOptions.addArguments("--disable-popup-blocking");
-        chromeOptions.addArguments("--disable-gpu");
-        chromeOptions.addArguments("--start-maximized");
-        chromeOptions.addArguments("--disable-plugins");
-        chromeOptions.addArguments("--disable-plugins-discovery");
-        chromeOptions.addArguments("--disable-preconnect");
-        chromeOptions.addArguments("--disable-notifications");
-
-        chromeOptions.addArguments("'--dns-prefetch-disable'");
+        chromeOptions.addArguments("--ignore-certifcate-errors");   // ssl sertifika hatası yok sayma
+        chromeOptions.addArguments("--disable-popup-blocking");  //pop-up bloklaması
+        chromeOptions.addArguments("--disable-gpu");  //
+        chromeOptions.addArguments("--start-maximized"); // full screen browser
+        chromeOptions.addArguments("--disable-plugins"); //chrome pluginler , driver bazlı pluginler durdurulur
+        chromeOptions.addArguments("--disable-plugins-discovery");   //flash dahil tüm pluginler durdurulur
+        chromeOptions.addArguments("--disable-preconnect");   //google ın dns çözümlemesi nedeniyle oluşabilecek performans düşüklüğünü engeller
+        chromeOptions.addArguments("--disable-notifications");   // bildirimleri engeller
+        chromeOptions.addArguments("'--dns-prefetch-disable'");   //search bara girilen anahtar kelimenin doğuracağı sonuçları chromeun arka planda yüklemesini engellemek için
         chromeOptions.setAcceptInsecureCerts(true);
         chromeOptions.addArguments("test-type");
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\drivers\\chromedriver.exe");
         driver = new ChromeDriver(chromeOptions);
 
         Configuration configuration = new Configuration();
