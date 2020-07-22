@@ -40,23 +40,31 @@ public class CheckProductCount extends TestBase {
     }
 
     public CheckProductCount goToNikeAndCheckProductCount() throws InterruptedException {
-
         List<WebElement> elementName = driver.findElements(By.cssSelector(".brand-name"));
         List<WebElement> productCount = driver.findElements(By.cssSelector(".brand-length"));
+        String countInAllBrands = null;
 
         int listsize = elementName.size();
         for (int i = 0; i < listsize; i++) {
             if (elementName.get(i).getText().equals("Nike")) {
+
                 System.out.println(i + "=index of Nike");
-                String countInAllBrands  =  productCount.get(i).getText();
+                Thread.sleep(3000);
+                countInAllBrands = productCount.get(i).getText();
+                scrollToElement(driver,elementName.get(i));
                 elementName.get(i).click();
-                WebElement countTextInNike =  driver.findElement(By.cssSelector("div#productResult div.title-wrapper.with-bg.for-desktop.brand > div > div > div"));
-                String countInNike  = countTextInNike.getText();
-                System.out.println(countInAllBrands + "iiiff countInAllBrands  " + countInNike + "iiiff countInNike");
+                Thread.sleep(3000);
+                System.out.println("Go to Nike");
+                break;
             }
         }
-     //   System.out.println(countInAllBrands + " countInAllBrands  " + countInNike + "countInNike");
-       // Assert.assertEquals("yanlış Nerde ", countInAllBrands, countInNike);
+
+        WebElement countTextInNike = driver.findElement(By.cssSelector("div#productResult div.title-wrapper.with-bg.for-desktop.brand > div > div > div"));
+        String countInNike = countTextInNike.getText();
+        String replacedCountInNike= countInNike.replace("." , "").replace(" ürün var","");
+        String replacedcountInAllBrands = countInAllBrands.replace(" Ürün", "");
+        Assert.assertEquals(replacedcountInAllBrands, replacedCountInNike);
+        System.out.println("Check product counts in brands page and brand detail page");
 
         return this;
     }
