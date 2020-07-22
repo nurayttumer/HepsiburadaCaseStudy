@@ -4,11 +4,15 @@ import base.PageBase;
 
 import base.TestBase;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+
+import java.util.List;
 
 
 public class HomePage extends TestBase {
@@ -34,7 +38,8 @@ public class HomePage extends TestBase {
     @FindBy(css = "#categorySuggestionList > div.category-suggestion-title > h1")
     public WebElement searchTextKeyword;
 
-//
+    @FindBy(css = "body > div.wrapper > main > div.container.page-content > div > div.brands-area > a:nth-child(1011) > span.brand-name")
+    public WebElement nikeText;
 
     public HomePage assertHomeIsLoaded() {
         System.out.println("Confirming the page is loading");
@@ -42,8 +47,6 @@ public class HomePage extends TestBase {
         Assert.assertEquals("https://www.hepsiburada.com/", driver.getCurrentUrl());
         return this;
     }
-
-
 
     public HomePage assertKeywordIsSearched() {
         searchBox.click();
@@ -53,6 +56,5 @@ public class HomePage extends TestBase {
         System.out.println("Confirmed the keyword is searched and equals to IPhone");
         return this;
     }
-
 
 }
